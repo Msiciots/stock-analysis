@@ -19,12 +19,6 @@ if __name__ == "__main__":
                                 })
     stock_df = StockDataFrame.retype(stock_df)
 
-    # print(data)
-    # print(data.index[0])
-    # print("From ")
-    # days = len(df)-4
-    # print("From "+df.iloc[0,0]+" to "+df.iloc[days-1,0])
-    # # print(df.mean['Closing Price'])
     
     df['SMA_10'] = df['Closing Price'].rolling(10).mean()
     df['EMA_12'] = df['Closing Price'].ewm(span=12).mean()
@@ -38,8 +32,3 @@ if __name__ == "__main__":
     res = pd.concat([df1, df2], axis=1)
     print(res)
 
-    # df_out = pd.concat([df1, df2], axis=1)
-    # print(df_out)
-    # print(df)
-    # # print(data.iloc[len(data)-5,0])
-    # # print(len(data)-5)
