@@ -1,5 +1,7 @@
 ## Evironment
 ```
 pip3 install pandas
-pip install stockstats
+pip3 install matplotlib
+pip3 install stockstats
+pip3 install TA-Lib
 ```
