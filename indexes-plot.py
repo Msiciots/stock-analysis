@@ -26,7 +26,7 @@ if __name__ == "__main__":
     fig = plt.figure(figsize=(30, 10))
     ax = fig.add_axes([0.02,0.3,1,0.5])
     ax2 = fig.add_axes([0.02,0.1,1,0.2])
-
+    # Plot average line
     ax.set_xticks(range(0, len(df.index), 10))
     ax.set_xticklabels(df.index[::10])
     ax.plot(sma_10, label='sma')
@@ -35,13 +35,11 @@ if __name__ == "__main__":
     ax.grid(True)
     ax.set_title('Average Line')
     ax.legend(loc='upper left', shadow=True, fontsize='x-large')
-
-
+    # Plot Volume bar
     ax2 = df['Volume'].plot(kind='bar', color='k', alpha=0.3)
     x_labels = df.index.strftime('%Y/%m')
     ax2.set_xticklabels(x_labels,rotation=45)
     ax2.set_xticks(range(0, len(df.index), 10))
-   
     ax2.set_title('Volume')
     ax2.grid(True)
 
@@ -98,6 +96,6 @@ if __name__ == "__main__":
     ax2.set_xticks(range(0, len(df.index), 10))
     ax2.set_title('Volume')
     ax2.grid(True)
-    # ax.legend();
+
     fig3.subplots_adjust(hspace=0)
     fig3.savefig('bband.png')
