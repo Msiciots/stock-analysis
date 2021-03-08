@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 import matplotlib.pyplot as plt
+import mplfinance as mpf
 import yfinance as yf
 import talib
 if __name__ == "__main__":
@@ -29,6 +30,9 @@ if __name__ == "__main__":
     # Plot average line
     ax.set_xticks(range(0, len(df.index), 10))
     ax.set_xticklabels(df.index[::10])
+
+    mpf.plot(df,type='candle')
+
     ax.plot(sma_10, label='sma')
     ax.plot(ema_24, label='ema')
     ax.plot(adx_14, label='adx')
