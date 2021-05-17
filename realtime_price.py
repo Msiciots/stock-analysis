@@ -12,8 +12,8 @@ data = {'time':[],
         'av':[]
         }
 while True:
-    h = datetime.now().strftime("%H")
-    m = datetime.now().strftime("%M")   
+    h = int(datetime.now().strftime("%H"))
+    m = int(datetime.now().strftime("%M"))
     if (9<=h and h<=12) or (h==13 and m<=30):
         for i in range(20):
             res = requests.get(url).json()
