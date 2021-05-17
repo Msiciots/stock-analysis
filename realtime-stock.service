@@ -1,0 +1,20 @@
+[Unit]
+Description=My python process to get real-time stock price
+[Service]
+User=cosbi20
+# The configuration file application.properties should be here:
+
+#change this to your workspace
+WorkingDirectory=/home/cosib20/Desktop/stock-analysis
+
+#path to executable. 
+#executable is a bash script which calls jar file
+ExecStart=python3 realtime_price.py
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
