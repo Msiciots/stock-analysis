@@ -4,3 +4,4 @@ mplfinance==0.12.7a7
 TA-Lib==0.4.19
 yfinance==0.1.55
 beautifulsoup4==4.9.3
+requests==2.22.0
