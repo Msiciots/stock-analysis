@@ -8,8 +8,8 @@ url = "https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=tse_2330.tw"
 data = {'time':[],
         'code':[],
         'price':[],
-        'v':[],
-        'av':[]
+        'av':[],
+        'v':[]
         }
 while True:
     h = int(datetime.now().strftime("%H"))
@@ -21,9 +21,9 @@ while True:
             t = record['d'] + "-" + record['t']
             data['time'].append(t)
             data['code'].append(record['c'])
-            data['price'].append(record['pz'])
-            data['v'].append(record['s'])
-            data['av'].append(record['v'])
+            data['price'].append(record['z'])
+            data['v'].append(record['v'])
+            data['av'].append(record['av'])
             time.sleep(5)
             if i==19:
                 df = pd.DataFrame(data=data)
